@@ -1,0 +1,8 @@
+.container
+  = form_with(model:@profile, url:profile_path, method:'put', local:true ) do |f|
+    %div
+      = f.label :username, '名前'
+    %div
+      = f.text_field :username
+    .actions
+      = f.submit 'SUBMIT', class: 'avatar_submit_btn'
