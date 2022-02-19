@@ -1,6 +1,10 @@
 .container
   = form_with(model:@profile, url:profile_path, method:'post', local:true ) do |f|
     %div
+      = f.label :avatar, 'アバターを選択', class: 'post_image'
+    %div
+      = f.file_field :avatar, class: 'image_form'
+    %div
       = f.label :username, '名前'
     %div
       = f.text_field :username
