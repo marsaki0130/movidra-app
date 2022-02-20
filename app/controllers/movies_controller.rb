@@ -19,6 +19,12 @@ class MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    movie = current_user.movie.find(params[:id])
+    movie.destroy!
+    redirect_to root_path, notice: '削除に成功しました' 
+  end
+
   private
   def movie_params
     params.require(:movie).permit(:title, :eyecatch)

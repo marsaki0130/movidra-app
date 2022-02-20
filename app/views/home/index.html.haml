@@ -1,7 +1,1 @@
-.container
-  - @movies.each do |movie|
-    .movie
-      %p= movie.title
-    .movie_content
-      - movie.eyecatch.each do |eyecatch| 
-        = image_tag eyecatch, class: 'movie_content_image'
+%p= link_to 'ユーザー登録はこちら', new_user_session_path
