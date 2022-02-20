@@ -12,7 +12,11 @@ class MoviesController < ApplicationController
 
   def create
     @movie = current_user.movie.build(movie_params)
-
+    if @movie.save
+      redirect_to root_path, notice: '保存できました'
+    else
+      render :new
+    end
   end
 
   private
