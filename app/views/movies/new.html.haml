@@ -1,0 +1,8 @@
+.container
+  = form_with(model:@movie, url:movies_path, method:'post', local:true ) do |f|
+    %div
+      = f.label :title, 'タイトル'
+    %div
+      = f.text_field :title
+    .actions
+      = f.submit 'SUBMIT', class: 'avatar_submit_btn'
