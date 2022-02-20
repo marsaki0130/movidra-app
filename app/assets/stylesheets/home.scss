@@ -1,0 +1,18 @@
+.movie {
+  &_content {
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x;
+    min-width: 100%;
+
+    &_image {
+        scroll-snap-align: start;
+        display: block;
+        max-height: 450px;
+        max-width: 100%;
+        flex: none;
+        object-fit: cover;
+        min-width: 100%;
+    }
+  }
+}
