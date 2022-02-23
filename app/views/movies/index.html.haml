@@ -1,1 +1,7 @@
-movie
+.container
+  - @movie.each do |movie|
+    .movie
+      %p= movie.title
+    .movie_content
+      - movie.eyecatch.each do |eyecatch| 
+        = image_tag eyecatch, class: 'movie_content_image'
