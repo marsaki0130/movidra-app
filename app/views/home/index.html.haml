@@ -1,1 +1,8 @@
-%p= link_to 'ユーザー登録はこちら', new_user_session_path
+.container
+  .title
+    %h1 モビドラ
+    %h2 好きな映画・ドラマを熱く語ろう!!
+
+  .top_menu
+    %p= link_to 'ユーザー登録はこちら', new_user_session_path, class:''
+    %p= link_to '映画・ドラマ一覧', movies_path, class:''

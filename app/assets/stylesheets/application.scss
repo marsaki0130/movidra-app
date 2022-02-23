@@ -1,5 +1,6 @@
 @import 'home';
 @import 'variables';
+@import 'flash';
 
 
 html {
@@ -21,7 +22,7 @@ html {
   
   body {
     height: 100%;
-    background-color: $base-bg-color;
+    background-color: $primary-color;
     font-size: 1em;
     color: $text-base-color;
   }
