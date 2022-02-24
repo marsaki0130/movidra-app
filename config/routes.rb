@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resource :profile, only:[:new,:create]
 
-  resources :movies, only:[:index, :show, :new, :create, :destroy]
+  resources :movies, only:[:index, :show, :new, :create, :destroy] do
+    resources :comments, only: [:new, :create]
+  end
 end

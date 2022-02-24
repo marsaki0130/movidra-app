@@ -1,0 +1,14 @@
+@import 'variables';
+
+.movie {
+    margin-top: 40px;
+
+    &_nav {
+        font-size: 20px;
+        margin-bottom: 40px;
+
+      &_image{
+          margin-top: 20px;
+      }
+    }
+}
