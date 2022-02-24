@@ -1,0 +1,19 @@
+.container
+  .movie
+    .movie_nav
+      %p= @movie.title
+      .movie_nav_image
+      - @movie.eyecatch.each do |eyecatch| 
+        = image_tag eyecatch, class: 'movie_content_image'
+
+    .movie_icon
+      .movie_like
+
+      .movie_comment
+        = link_to new_movie_comment_path(@movie.id) do
+          = image_tag 'comment.png', class:''
+
+      .movie_secret
+
+      .movie_share
+
