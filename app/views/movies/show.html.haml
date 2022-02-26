@@ -6,14 +6,16 @@
       - @movie.eyecatch.each do |eyecatch| 
         = image_tag eyecatch, class: 'movie_content_image'
 
-    .movie_icon
+    .movie_content
       .movie_like
 
       .movie_comment
         = link_to new_movie_comment_path(@movie.id) do
-          = image_tag 'comment.png', class:''
+          = image_tag 'comment.png', class:'comment_icon'
 
       .movie_secret
 
       .movie_share
+        = link_to "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' do
+          = image_tag 'share.png', class: 'share_icon'
 
