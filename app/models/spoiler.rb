@@ -1,0 +1,2 @@
+class Spoiler < ApplicationRecord
+end
