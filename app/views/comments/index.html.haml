@@ -1,0 +1,9 @@
+.container
+  .header_comment
+    %div
+      %p.page_title 作品レビュー
+
+  .comment
+    -  @comment.each do |comment|
+      .comment-feelings
+        %p= comment.feelings
