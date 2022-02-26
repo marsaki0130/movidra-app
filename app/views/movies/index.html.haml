@@ -1,9 +1,11 @@
 .container
   - @movie.each do |movie|
     = link_to movie_path(id: movie.id) do
-      .movie
-        %p= movie.title
+      %hr
       .movie_content
         - movie.eyecatch.each do |eyecatch| 
           = image_tag eyecatch, class: 'movie_content_image'
+      .movie
+        %p= movie.title
+      
 

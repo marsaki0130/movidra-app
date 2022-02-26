@@ -1,10 +1,10 @@
 .container
   .movie
     .movie_nav
-      %p= @movie.title
       .movie_nav_image
       - @movie.eyecatch.each do |eyecatch| 
         = image_tag eyecatch, class: 'movie_content_image'
+      %p= @movie.title
 
     .movie_content
       .movie_like
@@ -12,10 +12,14 @@
       .movie_comment
         = link_to new_movie_comment_path(@movie.id) do
           = image_tag 'comment.png', class:'comment_icon'
-
-      .movie_secret
+          %p コメント
 
       .movie_share
         = link_to "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' do
           = image_tag 'twitter.png', class: 'share_icon'
+          %p 共有
+
+      .movie_secret
+        = image_tag 'netabare.png', class: 'secret_icon'
+        %p 考察部屋
 
