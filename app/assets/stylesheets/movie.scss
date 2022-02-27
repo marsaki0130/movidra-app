@@ -1,18 +1,27 @@
 @import 'variables';
 
+$heart-size: 16px;
+$avatar-size: 32px;
+
 .movie {
     margin-top: 40px;
+    margin: 16px 0;
+    font-style: italic;
+    color: $text-base-color;
+    
 
     &_nav {
         font-size: 20px;
         margin-bottom: 40px;
 
-      &_image{
-          margin-top: 20px;
+      &_image {
+        width: $heart-size;
+        height: $heart-size;
       }
     }
 
     &_content {
+        margin-top: 10px;
         display: flex;
         overflow: auto;
         scroll-snap-type: x;
@@ -28,10 +37,36 @@
             min-width: 100%;
         }
     }
+
+    &_comment {
+      font-size: 12px;
+    }
+
+    &_share {
+      font-size: 12px;
+    }
+
+    &_secret {
+        font-size: 12px;
+    }
+}
+
+// アイコン画像のサイズ
+
+.comment_icon {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 50px;  
 }
 
 .share_icon {
     min-width: 100%;
     max-width: 100%;
-    max-height: 25px;
+    max-height: 50px;
+}
+
+.secret_icon {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 50px;
 }

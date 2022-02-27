@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   resources :movies, only:[:index, :show, :new, :create, :destroy] do
     resources :comments, only: [:index, :new, :create]
+    resources :spoilers, only: [:index, :new, :create]
   end
 end

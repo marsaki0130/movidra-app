@@ -7,3 +7,8 @@
     -  @comment.each do |comment|
       .comment-feelings
         %p= comment.feelings
+      %hr
+
+  = link_to new_movie_comment_path do
+    .float_btn
+      %i.fas.fa-comment-plus 

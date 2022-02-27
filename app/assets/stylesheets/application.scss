@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'flash';
 @import 'movie';
+@import 'header';
 
 
 html {
@@ -23,7 +24,7 @@ html {
   
   body {
     height: 100%;
-    background-color: $primary-color;
+    background-color: $base-bg-color;
     font-size: 1em;
     color: $text-base-color;
   }
@@ -36,7 +37,7 @@ html {
   .container {
     padding: 16px 16px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.199);
+    // background-color: rgba(255, 255, 255, 0.199);
   }
   
   .float_btn {
@@ -47,9 +48,9 @@ html {
     height: 64px;
     border-radius: 100%;
     text-align: center;
-    background-color: $primary-color;
-    color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    // background-color: white;
+    // color: white;
+    // box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   
     i {
       margin-top: 22px;
