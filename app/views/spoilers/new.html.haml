@@ -1,1 +1,7 @@
-ネタバレ投稿
+.container
+  = form_with(model: @spoiler, url: movie_spoilers_path(@spoiler.movie), local: true) do |f|
+    %div 
+      = f.label :content, 'コメント'
+    %div
+      = f.text_area :content
+    = f.submit '保存', class: 'btn-primary'

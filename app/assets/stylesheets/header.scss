@@ -8,15 +8,12 @@ $back-icon-size: 16px;
 .header {
   display: flex;
   justify-content: space-between;
-  // background-color: $primary-color;
+  background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
-  background-image: -webkit-gradient(linear, left top, right top, from(#fa709a), to(#fee140));
-  background-image: -webkit-linear-gradient(left, #fa709a 0%, #fee140 100%);
-  background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
 
   a {
-    color: black;
+    color: white;
     font-family: cursive;
   }
 
@@ -42,7 +39,6 @@ $back-icon-size: 16px;
   }
 
   &_pageTitle {
-    // color: black;
     line-height: $avatar-size;
     font-size: $font-lg;
   }

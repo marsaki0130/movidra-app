@@ -1,1 +1,14 @@
-spoilers
+.container
+  .header_comment
+    %div
+      %p.page_title ネタバレ
+
+  .spoiler
+    -  @spoiler.each do |spoiler|
+      .spoiler-content
+        %p= spoiler.content
+      %hr
+
+  = link_to new_movie_spoiler_path do
+    .float_btn
+      %i.fas.fa-comment-plus 
