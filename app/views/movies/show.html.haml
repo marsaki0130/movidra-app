@@ -10,7 +10,7 @@
       .movie_like
 
       .movie_comment
-        = link_to new_movie_comment_path(@movie.id) do
+        = link_to movie_comments_path(@movie.id) do
           = image_tag 'comment.png', class:'comment_icon'
           %p コメント
 
@@ -20,6 +20,7 @@
           %p 共有
 
       .movie_secret
-        = image_tag 'netabare.png', class: 'secret_icon'
-        %p 考察部屋
+        = link_to movie_spoilers_path(@movie.id) do
+          = image_tag 'netabare.png', class: 'secret_icon'
+          %p 考察部屋
 
