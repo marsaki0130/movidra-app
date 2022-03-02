@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
       redirect_to movie_path(@movie), notice:'コメントを追加'
     else
       flash.now[:error] = '保存に失敗しました' 
-      render :new
+      render :index
     end
   end
 

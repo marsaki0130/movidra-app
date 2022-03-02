@@ -2,7 +2,7 @@
   - @movie.each do |movie|
     = link_to movie_path(id: movie.id) do
       %hr
-      .movie_content
+      .movie_list
         - movie.eyecatch.each do |eyecatch| 
           = image_tag eyecatch, class: 'movie_content_image'
       .movie
