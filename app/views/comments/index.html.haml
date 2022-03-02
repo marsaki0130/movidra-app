@@ -9,6 +9,12 @@
         %p= comment.feelings
       %hr
 
-  = link_to new_movie_comment_path do
-    .float_btn
-      %i.fas.fa-comment-plus 
+
+
+= form_with(model:[@movie, @comment],url:movie_comments_path, local: true) do |f|
+  .comment_form
+    .comment_form_container
+      %label.comment_create_icon
+        = f.text_area :feelings, class: 'comment_text'
+  .comment_submit
+    = f.submit '保存', class: 'btn-primary'

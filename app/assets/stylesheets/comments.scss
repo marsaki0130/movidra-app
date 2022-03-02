@@ -1,0 +1,49 @@
+.header_comment{
+    text-align: center;
+    color: #333A42;
+    font-size: 16px;
+    margin-bottom: 52px;
+  }
+  
+  .comment{
+    margin-bottom: 20px;
+  
+    
+      &_form{
+          margin: 70px;
+          position: relative;
+          width: 500px;
+          height: 100px;
+          margin: 0 auto;
+      }
+
+      &_text{
+        position: relative;
+        margin-top: 100px;
+        border-radius: 5px;
+        border-color: #9B9B9B;
+        padding: 8px;
+        width: 100%;
+        color: #9B9B9B;
+        font-size: 14px;
+        line-height: 20px
+        word-break normal;
+      }
+  }
+  
+  .comment-label{
+    position: absolute;
+    text-align: center;
+    top: 15px;
+    left: 10px;
+    font-size: 16px;
+    color: #a0a0a0;
+    transition: all 0.25s ease;
+    
+    &.focus{
+      top: -25px;
+      left: 5px;
+      font-size: 14px;
+      color: #fff;
+    }
+  }
