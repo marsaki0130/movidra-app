@@ -14,6 +14,8 @@
 
     .movie_content
       .movie_like
+        = image_tag 'heart-active.svg', class: 'like_icon'
+        %p お気に入り
 
       .movie_comment
         = link_to movie_comments_path(@movie.id) do
