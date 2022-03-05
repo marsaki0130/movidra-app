@@ -5,28 +5,36 @@
       - @movie.eyecatch.each do |eyecatch| 
         = image_tag eyecatch, class: 'movie_content_image'
       %p= @movie.title
+      %hr
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
           = link_to '編集する', edit_movie_path(@movie)
           = link_to '削除する', movie_path(@movie), data: { method:'delete'}
-      %p あらすじ
+        %p ストーリー
+  .movie_content
+    - if user_signed_in?
+      - if current_user.has_liked(@movie)
+        .movie_heart
+          = link_to movie_like_path(@movie), data: {method: 'delete'} do
+            = image_tag 'heart-active.svg'
+      - else
+        .movie_heart
+          = link_to movie_like_path(@movie), data: {method: 'post'} do
+            = image_tag 'heart.svg'
 
-    .movie_content
-      .movie_like
+    .movie_comment
+      = link_to movie_comments_path(@movie.id) do
+        = image_tag 'comment.png', class:'movie_icon'
+        %p 作品レビュー
 
-      .movie_comment
-        = link_to movie_comments_path(@movie.id) do
-          = image_tag 'comment.png', class:'comment_icon'
-          %p 作品レビュー
+    .movie_share
+      = link_to "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' do
+        = image_tag 'twitter.png', class: 'movie_icon'
+        %p 共有
 
-      .movie_share
-        = link_to "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' do
-          = image_tag 'twitter.png', class: 'share_icon'
-          %p 共有
-
-      .movie_secret
-        = link_to movie_spoilers_path(@movie.id) do
-          = image_tag 'netabare.png', class: 'secret_icon'
-          %p 考察部屋
+    .movie_secret
+      = link_to movie_spoilers_path(@movie.id) do
+        = image_tag 'netabare.png', class: 'movie_icon'
+        %p 考察部屋
 

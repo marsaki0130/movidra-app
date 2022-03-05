@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_26_075648) do
+ActiveRecord::Schema.define(version: 2022_03_03_223418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,16 +44,27 @@ ActiveRecord::Schema.define(version: 2022_02_26_075648) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
     t.text "feelings"
     t.text "consideration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_comments_on_movie_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_likes_on_movie_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -69,11 +80,13 @@ ActiveRecord::Schema.define(version: 2022_02_26_075648) do
   end
 
   create_table "spoilers", force: :cascade do |t|
+    t.bigint "user_id"
     t.bigint "movie_id", null: false
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_spoilers_on_movie_id"
+    t.index ["user_id"], name: "index_spoilers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

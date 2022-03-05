@@ -31,6 +31,8 @@ $avatar-size: 32px;
         overflow: auto;
         scroll-snap-type: x;
         min-width: 100%;
+        justify-content: space-evenly;
+        cursor: pointer;
   
         &_image {
             scroll-snap-align: start;
@@ -54,24 +56,16 @@ $avatar-size: 32px;
     &_secret {
         font-size: 12px;
     }
+
+    &_heart {
+      font-size: 12px;
+    }
 }
 
 // アイコン画像のサイズ
 
-.comment_icon {
-    min-width: 50%;
-    max-width: 50%;
-    max-height: 50px;  
-}
-
-.share_icon {
+.movie_icon {
   min-width: 50%;
   max-width: 50%;
-  max-height: 50px;
-}
-
-.secret_icon {
-  min-width: 50%;
-  max-width: 50%;
-  max-height: 50px;
+  max-height: 50px;  
 }
