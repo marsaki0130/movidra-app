@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def has_liked(movie)
-    likes.exists(movie_id: movie.id)
+    likes.exists?(movie_id: movie.id)
   end
 
   def like_count
