@@ -5,17 +5,19 @@
       - @movie.eyecatch.each do |eyecatch| 
         = image_tag eyecatch, class: 'movie_content_image'
       %p= @movie.title
+      %hr
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
           = link_to '編集する', edit_movie_path(@movie)
           = link_to '削除する', movie_path(@movie), data: { method:'delete'}
-      %p あらすじ
+        %p ストーリー
   .movie_content
     - if user_signed_in?
       - if current_user.has_liked(@movie)
         .movie_heart
-          = image_tag 'heart-active.svg'
+          = link_to movie_like_path(@movie), data: {method: 'delete'} do
+            = image_tag 'heart-active.svg'
       - else
         .movie_heart
           = link_to movie_like_path(@movie), data: {method: 'post'} do

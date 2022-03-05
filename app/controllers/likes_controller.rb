@@ -18,6 +18,6 @@ class LikesController < ApplicationController
     like = movie.likes.find_by!(user_id: current_user.id)
     like.destroy!
     
-    render json: { status: 'ok'}
+    redirect_to movie_path(movie)
   end
 end
