@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2022_03_03_223418) do
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
-    t.text "feelings"
+    t.text "feelings", null: false
     t.text "consideration"
-    t.integer "star"
+    t.integer "star", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_comments_on_movie_id"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_223418) do
   create_table "movies", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
+    t.text "story"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_movies_on_user_id"

@@ -8,5 +8,9 @@
       = f.label :title, 'タイトル'
     %div
       = f.text_field :title
+    %div
+      = f.label :story, 'ストーリー'
+    %div
+      = f.text_area :story
     .actions
       = f.submit 'SUBMIT', class: 'avatar_submit_btn'

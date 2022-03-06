@@ -6,9 +6,22 @@
   .comment
     -  @comment.each do |comment|
       .comment-feelings
-        %p= comment.feelings
-      %hr
+        %p
+          内容:#{comment.feelings}
+        %p
+          評価:#{comment.star}点
 
+        %div{:id => "star-rate#{comment.id}"}
+        :javascript
+          $('#star-rate#{comment.id}').raty({
+            size      : 36,
+            starOff   : '#{asset_path('star-off.png')}',
+            starOn    : '#{asset_path('star-on.png')}',
+            half      : false,
+            readOnly: true,
+            score: #{comment.star},
+          });
+      %hr    
 
 = form_with(model:[@movie, @comment],url:movie_comments_path, local: true) do |f|
   .comment_form
