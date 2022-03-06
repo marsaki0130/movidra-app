@@ -11,7 +11,7 @@
         .dropdown-content.mini
           = link_to '編集する', edit_movie_path(@movie)
           = link_to '削除する', movie_path(@movie), data: { method:'delete'}
-        %p ストーリー
+      %p ストーリー
   .movie_content
     - if user_signed_in?
       - if current_user.has_liked(@movie)

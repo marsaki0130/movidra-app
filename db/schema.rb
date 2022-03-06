@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_223418) do
     t.bigint "movie_id", null: false
     t.text "feelings"
     t.text "consideration"
+    t.integer "star"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_comments_on_movie_id"

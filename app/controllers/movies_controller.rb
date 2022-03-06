@@ -30,6 +30,6 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :eyecatch)
+    params.require(:movie).permit(:title, :eyecatch).merge(user_id: current_user.id)
   end
 end
