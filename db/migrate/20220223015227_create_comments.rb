@@ -3,9 +3,9 @@ class CreateComments < ActiveRecord::Migration[6.1]
     create_table :comments do |t|
       t.references :user, null:false
       t.references :movie, null:false
-      t.text :feelings
+      t.text :feelings, null:false
       t.text :consideration
-      t.integer :star
+      t.integer :star, null:false
       t.timestamps
     end
   end

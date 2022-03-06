@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
 
 
   def new
-    movie = Movie.find(params[:movie_id])
-    @comment = movie.comments.build
+    @movie = Movie.find(params[:movie_id])
+    @comment = @movie.comments.build
   end
 
   def create
@@ -24,6 +24,6 @@ class CommentsController < ApplicationController
   end
 
   def movie_params
-    params.require(:comment).permit(:feelings).merge(user_id: current_user.id)
+    params.require(:comment).permit(:feelings, :star).merge(user_id: current_user.id)
   end
 end
