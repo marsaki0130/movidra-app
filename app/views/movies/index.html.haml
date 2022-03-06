@@ -7,5 +7,9 @@
           = image_tag eyecatch, class: 'movie_content_image'
       .movie
         %p= movie.title
-      
+
+  = link_to new_movie_path do
+    .float_btn
+      %i.fa.fa-plus
+
 

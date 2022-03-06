@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.references :movie, null:false
       t.text :feelings
       t.text :consideration
+      t.integer :star
       t.timestamps
     end
   end

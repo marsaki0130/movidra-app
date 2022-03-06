@@ -2,10 +2,12 @@
 
 .dropbtn {
     border: none;
+    right: 0;
+    position: absolute;
   }
   
   .dropdown {
-    // position: relative;
+    position: relative;
     // display: inline-block;
     font-size: 12px;
   }

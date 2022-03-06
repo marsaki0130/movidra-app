@@ -10,11 +10,26 @@
       %hr
 
 
-
 = form_with(model:[@movie, @comment],url:movie_comments_path, local: true) do |f|
   .comment_form
     .comment_form_container
       %label.comment_create_icon
         = f.text_area :feelings, class: 'comment_text'
+    .field
+      #star.form-group.row
+        = f.label :star,'評価 ', class:'col-md-3 col-form-label'
+        = f.hidden_field :star, id: :review_star
+      / 評価javascript
+      :javascript
+        $('#star').raty({
+          size     : 36,
+          starOff:  '#{asset_path('star-off.png')}',
+          starOn : '#{asset_path('star-on.png')}',
+  
+          scoreName: 'comment[star]',
+          half: false,
+        });
   .comment_submit
     = f.submit '保存', class: 'btn-primary'
+
+  
