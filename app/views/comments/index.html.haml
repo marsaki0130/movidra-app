@@ -27,6 +27,7 @@
   .comment_form
     .comment_form_container
       %label.comment_create_icon
+        = f.label :feelings, 'コメント'
         = f.text_area :feelings, class: 'comment_text'
     .field
       #star.form-group.row

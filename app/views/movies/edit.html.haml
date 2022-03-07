@@ -1,5 +1,5 @@
 .container
-  = form_with(model:@movie, url:movies_path, method:'post', local:true ) do |f|
+  = form_with(model:@movie, url:movie_path(@movie), method:'put', local:true ) do |f|
     %div
       = f.label :eyecatch, 'アイキャッチ'
     %div
