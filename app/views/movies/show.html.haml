@@ -1,12 +1,12 @@
 .container
   .movie
     .movie_nav
+      %p= @movie.title
       .movie_nav_image
       - @movie.eyecatch.each do |eyecatch| 
         = image_tag eyecatch, class: 'movie_content_image'
-      %p= @movie.title
-      %p= @movie.story
-      %hr
+      .movie_story
+        %p= @movie.story
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
