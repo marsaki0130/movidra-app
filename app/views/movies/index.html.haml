@@ -1,4 +1,10 @@
 .container
+  .tabs
+    .tabs_item.active
+      = link_to movies_path do
+        映画一覧
+    .tabs_item
+      ドラマ一覧
   - @movie.each do |movie|
     = link_to movie_path(id: movie.id) do
       %hr
