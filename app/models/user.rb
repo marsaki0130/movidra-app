@@ -23,4 +23,6 @@ class User < ApplicationRecord
   def comment_count
     comments.count
   end
+
+  
 end
