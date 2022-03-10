@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_231249) do
+ActiveRecord::Schema.define(version: 2022_03_03_223418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2022_03_09_231249) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "dramas", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "title", null: false
-    t.text "story"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_dramas_on_user_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "movie_id", null: false
@@ -76,6 +67,8 @@ ActiveRecord::Schema.define(version: 2022_03_09_231249) do
   create_table "movies", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title", null: false
+    t.string "entertainment", null: false
+    t.string "genre", null: false
     t.text "story"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
