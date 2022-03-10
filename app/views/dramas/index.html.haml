@@ -6,16 +6,16 @@
     .tabs_item
       = link_to dramas_path do
         ドラマ一覧
-  - @movie.each do |movie|
-    = link_to movie_path(id: movie.id) do
+  - @drama.each do |drama|
+    = link_to drama_path(id: drama.id) do
       %hr
       .movie_list
-        - movie.eyecatch.each do |eyecatch| 
+        - drama.eyecatch.each do |eyecatch| 
           = image_tag eyecatch, class: 'movie_content_image'
       .movie
-        %p= movie.title
+        %p= drama.title
 
-  = link_to new_movie_path do
+  = link_to new_drama_path do
     .float_btn
       %i.fa.fa-plus
 
