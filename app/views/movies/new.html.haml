@@ -1,9 +1,17 @@
 .container
   = form_with(model:@movie, url:movies_path, method:'post', local:true ) do |f|
     %div
-      = f.label :eyecatch, 'アイキャッチ'
+      = f.label :eyecatch, '画像'
     %div
       = f.file_field :eyecatch
+    %div
+      = f.label :entertainment, '娯楽'
+    %div
+      = f.select :entertainment,  [ ["映画"], ["ドラマ"]],  prompt: "娯楽を選択してください"
+    %div
+      = f.label :genre, 'ジャンル'
+    %div
+      = f.select :genre,  [ ["アクション"], ["SF"], ["アドベンチャー"], ["ファンタジー"], ["ホラー"], ["サスペンス"], ["ミステリー"], ["コメディ"], ["恋愛"], ["ファミリー"], ["ミュージカル"], ["その他"]],  prompt: "ジャンルを選択してください"
     %div
       = f.label :title, 'タイトル'
     %div

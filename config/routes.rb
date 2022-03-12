@@ -10,6 +10,4 @@ Rails.application.routes.draw do
     resources :spoilers, only: [:index, :new, :create]
     resource :like, only: [:show, :create, :destroy]
   end
-
-  resources :dramas, only:[:index, :show, :new, :create, :destroy, :edit, :update]
 end
