@@ -1,17 +1,22 @@
 .container
   .movie
     .movie_nav
-      %p= @movie.title
-      .movie_nav_image
-      - @movie.eyecatch.each do |eyecatch| 
-        = image_tag eyecatch, class: 'movie_content_image'
-      .movie_story
-        %p= @movie.story
+      .movie_title
+        %p= @movie.title
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
           = link_to '編集する', edit_movie_path(@movie)
           = link_to '削除する', movie_path(@movie), data: { method:'delete'}
+      .movie_nav_image
+      - @movie.eyecatch.each do |eyecatch| 
+        = image_tag eyecatch, class: 'movie_content_image'
+      .movie_story
+        %p= @movie.story
+      .movie_frame
+        %p= @movie.entertainment
+        %p= @movie.genre
+      
   .movie_content
     - if user_signed_in?
       - if current_user.has_liked(@movie)
