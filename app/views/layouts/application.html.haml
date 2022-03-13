@@ -12,7 +12,9 @@
   %body
     %header.header
       .header_logos
-        %i.fa-thin.fa-camera-movie
+        - if !current_page?(movies_path)
+          = link_to :back do
+            = image_tag 'back.svg', class: 'header_back'
         %p.header_pageTitle
           = link_to 'ムビドラ', movies_path
 
