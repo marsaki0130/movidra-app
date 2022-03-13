@@ -7,5 +7,8 @@ class Movie < ApplicationRecord
   belongs_to :user
   
   validates :title, uniqueness: true
+  validates :title, presence: true
+  validates :entertainment, presence: true
+  validates :genre, presence: true
 
 end

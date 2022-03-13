@@ -1,5 +1,7 @@
 .container
-  = render 'layouts/error_messages', model: f.object
+  %ul
+    -@movie.errors.full_messages.each do |message| 
+      %li= message
   = form_with(model:@movie, url:movies_path, method:'post', local:true ) do |f|
     %div
       = f.label :eyecatch, '画像'
