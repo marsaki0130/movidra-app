@@ -47,6 +47,7 @@ group :development do
   gem 'spring'
   gem 'html2haml'
   gem 'rails-i18n'
+  gem 'ransack'
 end
 
 group :test do
