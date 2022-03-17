@@ -24,5 +24,7 @@ class User < ApplicationRecord
     comments.count
   end
 
+ 
   
+
 end

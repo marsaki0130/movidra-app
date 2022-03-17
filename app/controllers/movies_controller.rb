@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   
   def index
     @movie = Movie.all
+    @comment = Comment.all
   end
 
   def show
@@ -41,6 +42,8 @@ class MoviesController < ApplicationController
     movie.destroy!
     redirect_to root_path, notice: '削除に成功しました' 
   end
+
+
 
   private
   def movie_params
