@@ -1,7 +1,7 @@
 .container
   .movie
     .movie_nav
-      .movie_title
+      .movie_title#movie-show{data: {movie_id: @movie.id}}
         %p= @movie.title
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
@@ -19,14 +19,10 @@
       
   .movie_content
     - if user_signed_in?
-      - if current_user.has_liked(@movie)
-        .movie_heart
-          = link_to movie_like_path(@movie), data: {method: 'delete'} do
-            = image_tag 'heart-active.svg'
-      - else
-        .movie_heart
-          = link_to movie_like_path(@movie), data: {method: 'post'} do
-            = image_tag 'heart.svg'
+      .movie_heart.hidden.active-heart
+        = image_tag 'heart-active.svg'
+      .movie_heart.hidden.inactive-heart
+        = image_tag 'heart.svg'
 
     .movie_comment
       = link_to movie_comments_path(@movie.id) do
