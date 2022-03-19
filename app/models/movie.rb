@@ -27,4 +27,17 @@ class Movie < ApplicationRecord
    end
  end
 
+ #コメント件数
+ def comment_count
+  comments.count
+ end
+
+ #検索機能
+  def self.search(search) 
+    if search 
+      Movie.where(['title LIKE ?', "%#{search}%"])
+    else
+      Movie.all 
+    end
+  end
 end

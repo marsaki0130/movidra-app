@@ -20,11 +20,4 @@ class User < ApplicationRecord
     likes.count
   end
 
-  def comment_count
-    comments.count
-  end
-
- 
-  
-
 end

@@ -3,15 +3,17 @@ class MoviesController < ApplicationController
   
   def index
     @movie = Movie.all
-    @comment = Comment.all
+    @movies = Movie.search(params[:search])
   end
 
   def show
     @movie = Movie.find(params[:id])
+    @movies = Movie.search(params[:search])
   end
 
   def new
     @movie = current_user.movie.build
+    @movies = Movie.search(params[:search])
   end
 
   def create
@@ -43,6 +45,11 @@ class MoviesController < ApplicationController
     redirect_to root_path, notice: '削除に成功しました' 
   end
 
+  def search
+    @movie = Movie.search(params[:search])
+    @keyword = params[:search]
+    render "index"
+  end
 
 
   private

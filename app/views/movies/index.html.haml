@@ -5,6 +5,8 @@
         映画・ドラマ一覧
     .tabs_item
 
+
+
   - @movie.each do |movie|
     = link_to movie_path(id: movie.id) do
       .movie_list
@@ -12,6 +14,11 @@
           = image_tag eyecatch, class: 'movie_content_image'
       .movie_name
         %p= movie.title
+
+      .movie_comments
+        %p 「レビュー」
+        %span= movie.comment_count
+        %p 件
 
   = link_to new_movie_path do
     .float_btn
