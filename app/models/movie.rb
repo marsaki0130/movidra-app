@@ -11,6 +11,11 @@ class Movie < ApplicationRecord
   validates :entertainment, presence: true
   validates :genre, presence: true
 
+  def like_count
+    likes.count
+  end
+
+
   def avg_score
     unless self.comments.empty?
       comments.average(:star).round(1)

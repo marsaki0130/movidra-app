@@ -3,23 +3,20 @@ class MoviesController < ApplicationController
   
   def index
     @movie = Movie.all
-    @movies = Movie.search(params[:search])
   end
 
   def show
     @movie = Movie.find(params[:id])
-    @movies = Movie.search(params[:search])
   end
 
   def new
     @movie = current_user.movie.build
-    @movies = Movie.search(params[:search])
   end
 
   def create
     @movie = current_user.movie.build(movie_params)
     if @movie.save
-      redirect_to root_path, notice: '保存できました'
+      redirect_to movies_path, notice: '保存できました'
     else
       render :new
     end
@@ -42,7 +39,7 @@ class MoviesController < ApplicationController
   def destroy
     movie = current_user.movie.find(params[:id])
     movie.destroy!
-    redirect_to root_path, notice: '削除に成功しました' 
+    redirect_to movies_path, notice: '削除に成功しました' 
   end
 
   def search

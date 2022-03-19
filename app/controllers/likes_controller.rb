@@ -3,14 +3,14 @@ class LikesController < ApplicationController
   def show
     movie = Movie.find(params[:movie_id])
     like_status = current_user.has_liked?(movie)
-    render json: { hasLiked: like_status} 
+    render json: { hasLiked: like_status }  
   end
 
   def create
     movie = Movie.find(params[:movie_id])
     movie.likes.create!(user_id: current_user.id)
 
-    redirect_to movie_path(movie)
+    render json: { status: 'ok'}
   end
 
   def destroy
@@ -18,6 +18,6 @@ class LikesController < ApplicationController
     like = movie.likes.find_by!(user_id: current_user.id)
     like.destroy!
     
-    redirect_to movie_path(movie)
+    render json: { status: 'ok'}
   end
 end
