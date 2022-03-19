@@ -28,7 +28,8 @@ $avatar-size: 32px;
     }
 
     &_name{
-      text-align: center;
+      float: left;
+      width: 60%;
       font-size:22px;
       margin-bottom: 32px;
       font-family:bold;
@@ -84,6 +85,13 @@ $avatar-size: 32px;
 
     &_comment {
       font-size: 12px;
+    }
+
+    &_comments{
+      font-size: 14px;
+      display: flex;
+      float: right;
+      margin-top: 10px;
     }
 
     &_share {
