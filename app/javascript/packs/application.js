@@ -8,7 +8,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 
-// window.$ = window.jQuery = require('jquery');
+window.$ = window.jQuery = require('jquery');
 require('packs/raty')
 
 import $ from 'jquery'
@@ -28,6 +28,8 @@ const handleHeartDisplay = (hasLiked) => {
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#movie-show').data()
   const movieId = dataset.movieId
+
+ 
 
   axios.get(`/movies/${movieId}/like`)
     .then((response) => {
