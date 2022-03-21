@@ -11,6 +11,7 @@
 @import 'error_messages';
 @import 'avarage';
 
+
 html {
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
@@ -45,6 +46,11 @@ html {
     width: 100%;
     // background-color: rgba(255, 255, 255, 0.199);
   }
+
+  #container > img {
+    width: 100%;
+    max-width: 100%; /* 画像幅以上拡大しないようにする指定 */
+  }
   
   .float_btn {
     position: fixed;
@@ -64,4 +70,19 @@ html {
   
   .hidden {
     display: none;
+  }
+
+  /* スマ 767px以下 */
+  @media only screen and (max-width: 767px){
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  /* pc 768px以上 */
+  @media only screen and (min-width: 768px), print {
+    img{
+      width: 1000px;
+      height: auto;
+    }
   }

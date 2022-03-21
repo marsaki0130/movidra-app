@@ -1,8 +1,14 @@
 .container
-  .title
-    %h1 ムビドラ
-    %h2 好きな映画・ドラマを熱く語ろう!!
+  .bg_test
+    %p ムビドラ
+    %h2 自分の好きな作品を投稿して語り合おう!!
+    .bg_test-text
+      %p= link_to 'ユーザー登録はこちら', new_user_session_path, class:''
+      %p= link_to '映画・ドラマ一覧', movies_path, class:''
+    
+        
 
   .top_menu
-    %p= link_to 'ユーザー登録はこちら', new_user_session_path, class:''
-    %p= link_to '映画・ドラマ一覧', movies_path, class:''
+    
+
+
