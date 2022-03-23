@@ -1,3 +1,9 @@
+@import 'variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
 .movie {
   &_content {
     display: flex;
@@ -16,3 +22,42 @@
     }
   }
 }
+
+.container-bg{
+  background-image: url("banner.png");
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  opacity: 0.7;
+  text-align: center;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  .title {
+    color: #fff;
+  }
+
+  &_text{
+    display: flex;
+    padding: 100px 0;    
+    text-align: center; 
+    position: absolute; 
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+  }
+ }
+                   
