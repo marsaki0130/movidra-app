@@ -1,15 +1,6 @@
 .container
-  .tabs
-    .tabs_item{class: "#{'active' if current_page?(movies_path)}"}
-      = link_to movies_path do
-        映画・ドラマ一覧
-    .tabs_item{class: "#{'active' if current_page?(timeline_path)}"}
-      = link_to timeline_path do
-        タイムライン
-
-
-
-  - @movie.each do |movie|
+  = render 'commons/tabs'
+  - @movies.each do |movie|
     = link_to movie_path(id: movie.id) do
       .movie_list
         - movie.eyecatch.each do |eyecatch| 
@@ -25,4 +16,3 @@
   = link_to new_movie_path do
     .float_btn
       %i.fa.fa-plus
-

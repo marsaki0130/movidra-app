@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'search' => 'movies#search'
 
   resource :profile, only:[:new,:create]
+  resource :timeline, only:[:show]
 
   resources :movies, only:[:index, :show, :new, :create, :destroy, :edit, :update] do
     resources :comments, only: [:index, :new, :create]
