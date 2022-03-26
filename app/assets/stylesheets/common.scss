@@ -2,14 +2,13 @@
 
 .dropbtn {
     border: none;
-    margin-bottom: 24px;
     right: 0;
+    bottom:5px;
     position: absolute;
   }
   
   .dropdown {
     position: relative;
-    // display: inline-block;
     font-size: 12px;
   }
   
@@ -17,6 +16,7 @@
     font-weight: normal;
     display: none;
     right: 0;
+    bottom: 1px;
     position: absolute;
     background-color: white;
     min-width: 160px;

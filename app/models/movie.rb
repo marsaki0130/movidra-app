@@ -5,7 +5,7 @@ class Movie < ApplicationRecord
   has_many :spoilers, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   
   validates :title, uniqueness: true
   validates :title, presence: true
@@ -15,7 +15,6 @@ class Movie < ApplicationRecord
   def like_count
     likes.count
   end
-
 
   def avg_score
     unless self.comments.empty?

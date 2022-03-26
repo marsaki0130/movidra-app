@@ -13,6 +13,11 @@
         %span= movie.comment_count
         %p 件
 
+      .movie_liked
+        %p 「観たい!」
+        %span= movie.like_count
+        %p 件
+
   = link_to new_movie_path do
     .float_btn
       %i.fa.fa-plus
