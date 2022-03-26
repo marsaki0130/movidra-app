@@ -2,6 +2,7 @@
 
 $heart-size: 16px;
 $avatar-size: 32px;
+$container-padding: 16px;
 
 .movie {
     margin-top: 40px;
@@ -94,6 +95,13 @@ $avatar-size: 32px;
       margin-top: 10px;
     }
 
+    &_liked {
+      font-size: 14px;
+      display: flex;
+      float: right;
+      margin-top: 10px;
+    }
+
     &_share {
       font-size: 12px;
     }
@@ -119,4 +127,10 @@ $avatar-size: 32px;
   min-width: 50%;
   max-width: 50%;
   max-height: 50px;  
+}
+
+.movie_frame{
+  display: flex;
+  font-size: 22px;
+  margin: 5px;
 }
