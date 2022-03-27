@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :movie,dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :spoilers, dependent: :destroy
 
   def has_liked?(movie)
     likes.exists?(movie_id: movie.id)

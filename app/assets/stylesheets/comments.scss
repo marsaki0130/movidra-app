@@ -28,6 +28,12 @@
         line-height: 20px
         word-break normal;
       }
+
+      &_submit{
+        position: relative;
+        margin-top: 100px;
+        bottom: 0;
+      }
   }
   
   .comment-label{
