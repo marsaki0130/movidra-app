@@ -13,8 +13,10 @@
         = image_tag eyecatch, class: 'movie_content_image'
       .movie_frame
         %p= @movie.entertainment
+        %p ・
         %p= @movie.genre
       .movie_story
+        %p <ストーリー>
         %p= @movie.story
       
       
@@ -41,4 +43,6 @@
       = link_to movie_spoilers_path(@movie.id) do
         = image_tag 'netabare.png', class: 'movie_icon'
         %p 考察部屋
+
+= javascript_pack_tag 'movie'
 

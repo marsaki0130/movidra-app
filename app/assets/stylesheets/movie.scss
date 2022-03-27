@@ -63,26 +63,7 @@ $container-padding: 16px;
       }
     }
 
-    &_content {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        overflow: auto;
-        scroll-snap-type: x;
-        min-width: 100%;
-        justify-content: space-evenly;
-        cursor: pointer;
-  
-        &_image {
-            scroll-snap-align: start;
-            display: block;
-            max-height: 450px;
-            max-width: 100%;
-            flex: none;
-            object-fit: cover;
-            min-width: 100%;
-        }
-    }
+    
 
     &_comment {
       font-size: 12px;
@@ -114,10 +95,26 @@ $container-padding: 16px;
       font-size: 12px;
     }
 
-    &_story{
-      margin-top: 12px;
-      font-size: 12px;
-    }
+    &_content {
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      overflow: auto;
+      scroll-snap-type: x;
+      min-width: 100%;
+      justify-content: space-evenly;
+      cursor: pointer;
+  
+      &_image {
+          scroll-snap-align: start;
+          display: block;
+          max-height: 450px;
+          max-width: 100%;
+          flex: none;
+          object-fit: cover;
+          min-width: 100%;
+      }
+  }
 
 }
 
@@ -131,6 +128,16 @@ $container-padding: 16px;
 
 .movie_frame{
   display: flex;
-  font-size: 22px;
-  margin: 5px;
+  font-size: 12px;
+  padding: 1em 1em;
+  margin: 2em 0;
+  border: solid 5px #808080;
+}
+
+.movie_story{
+  margin-top: 12px;
+  font-size: 12px;
+  position: relative;
+
+  
 }
