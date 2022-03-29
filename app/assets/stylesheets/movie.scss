@@ -63,12 +63,6 @@ $container-padding: 16px;
       }
     }
 
-    
-
-    &_comment {
-      font-size: 12px;
-    }
-
     &_comments{
       font-size: 14px;
       display: flex;
@@ -82,6 +76,11 @@ $container-padding: 16px;
       float: right;
       margin-top: 10px;
     }
+
+    &_comment {
+      font-size: 12px;
+    }
+
 
     &_share {
       font-size: 12px;
@@ -103,7 +102,7 @@ $container-padding: 16px;
       scroll-snap-type: x;
       min-width: 100%;
       justify-content: space-evenly;
-      cursor: pointer;
+      // cursor: pointer;
   
       &_image {
           scroll-snap-align: start;
@@ -113,6 +112,7 @@ $container-padding: 16px;
           flex: none;
           object-fit: cover;
           min-width: 100%;
+          // cursor: pointer;
       }
   }
 
@@ -124,6 +124,7 @@ $container-padding: 16px;
   min-width: 50%;
   max-width: 50%;
   max-height: 50px;  
+  cursor: pointer;
 }
 
 .movie_frame{

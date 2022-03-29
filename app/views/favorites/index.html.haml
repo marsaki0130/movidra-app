@@ -1,0 +1,20 @@
+.container
+  = render 'commons/tabs'
+  %h2
+    気になる映画
+  - @movies.each do |movie|
+    = link_to movie_path(id: movie.id) do
+      .movie_list
+        - movie.eyecatch.each do |eyecatch| 
+          = image_tag eyecatch, class: 'movie_content_image'
+      .movie_name
+        %p= movie.title
+
+      .movie_comments
+        %p 「レビュー」
+        %span= movie.comment_count
+        %p 件
+      .movie_liked
+        %p 「観たい!」
+        %span= movie.like_count
+        %p 件

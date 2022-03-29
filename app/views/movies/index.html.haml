@@ -6,6 +6,9 @@
     .tabs_item{class: "#{'active' if current_page?(timeline_path)}"}
       = link_to timeline_path do
         タイムライン
+    .tabs_item{class: "#{'active' if current_page?(favorites_path)}"}
+      = link_to favorites_path do
+        お気に入り
 
 
 

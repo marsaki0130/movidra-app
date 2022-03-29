@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resource :profile, only:[:new,:create]
   resource :timeline, only:[:show]
 
+  resources :favorites, only:[:index]
+
   resources :movies, only:[:index, :show, :new, :create, :destroy, :edit, :update] do
     resources :comments, only: [:index, :new, :create]
     resources :spoilers, only: [:index, :new, :create]
