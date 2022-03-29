@@ -1,0 +1,16 @@
+.container
+  .movie_content
+    .movie_like
+      = link_to movie_comments_path(@movie.id) do
+        = image_tag 'comment3.png', class:'movie_icon'
+        %p 作品レビュー
+
+    .movie_share
+      = link_to "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' do
+        = image_tag 'twitter.png', class: 'movie_icon'
+        %p 共有
+
+    .movie_secret
+      = link_to movie_spoilers_path(@movie.id) do
+        = image_tag 'netabare.png', class: 'movie_icon'
+        %p 考察部屋

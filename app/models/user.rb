@@ -10,6 +10,7 @@ class User < ApplicationRecord
   
   has_many :movie,dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :favorite_movies, through: :likes, source: :movie
   has_many :comments, dependent: :destroy
   has_many :spoilers, dependent: :destroy
 

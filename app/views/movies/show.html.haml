@@ -18,20 +18,20 @@
       .movie_story
         %p <ストーリー>
         %p= @movie.story
-      
+     
       
   .movie_content
     - if user_signed_in?
       .movie_heart.hidden.active-heart
-        = image_tag 'heart-active.svg'
+        = image_tag 'heart-active.svg', class:'like_icon'
         %p 観たい
       .movie_heart.hidden.inactive-heart
-        = image_tag 'heart.svg'
+        = image_tag 'heart.svg', class:'like_icon'
         %p 観たい
 
     .movie_comment
       = link_to movie_comments_path(@movie.id) do
-        = image_tag 'comment.png', class:'movie_icon'
+        = image_tag 'comment3.png', class:'movie_icon'
         %p 作品レビュー
 
     .movie_share
