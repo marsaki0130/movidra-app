@@ -71,3 +71,9 @@ html {
   .hidden {
     display: none;
   }
+
+  .static_set{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
