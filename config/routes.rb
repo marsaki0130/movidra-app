@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :new, :create]
     resources :spoilers, only: [:index, :new, :create]
     resource :like, only: [:show, :create, :destroy]
-    
   end
+
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 end

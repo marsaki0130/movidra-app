@@ -1,19 +1,15 @@
 .container-bg
   .bg
     %p.title ムビドラ
-    %h2.title 自分の好きな作品を投稿して語り合おう!!
+    %h2.title 自分の一番好きな映画・ドラマを投稿して
+    %h2.title 本当に面白い作品「だけ」を皆に広めよう!!
     .bg_text
       %p= link_to 'ユーザー登録はこちら', new_user_session_path, class:'btn-secondary'
       %p= link_to '映画・ドラマ一覧', movies_path, class:'btn-secondary'
 
-  - if user_signed_in?
-    = link_to 'ログアウト', destroy_user_session_path,data: {method: 'delete'}
-  - else
-    = link_to 'ログイン', new_user_session_path
-    
-        
+ 
 
-  .top_menu
+= render 'commons/footer'
     
 
 
