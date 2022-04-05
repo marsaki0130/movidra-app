@@ -1,15 +1,16 @@
 @import 'variables';
 
-$avatar-size: 40px;
+$avatar-size: 36px;
 $header-padding-y: 16px;
 $back-icon-size: 16px;
 
 
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   background-color: $primary-color;
-  padding: $header-padding-y 16px;
+  padding: $header-padding-y 14px;
   font-weight: bold;
 
   a {
