@@ -18,7 +18,7 @@ class Movie < ApplicationRecord
 
   def avg_score
     unless self.comments.empty?
-      comments.average(:star).round(1)
+      comments.average(:star).
     else
       0.0
     end

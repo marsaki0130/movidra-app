@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
     @comment = @movie.comments.build(movie_params)
+    @comment.user_id = current_user.id
     if @comment.save
       redirect_to movie_path(@movie), notice:'コメントを追加'
     else
@@ -23,6 +24,7 @@ class CommentsController < ApplicationController
     end
   end
 
+  private
   def movie_params
     params.require(:comment).permit(:feelings, :star).merge(user_id: current_user.id)
   end
