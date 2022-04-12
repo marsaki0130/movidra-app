@@ -1,7 +1,7 @@
 .container
   = render 'commons/tabs'
   %h2
-    気になる映画
+    あなたが気になる作品
   - @movies.each do |movie|
     = link_to movie_path(id: movie.id) do
       .movie_list

@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = @movie.comments.build(movie_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to movie_path(@movie), notice:'コメントを追加'
+      redirect_to movie_comments_path(@movie), notice:'コメントを追加'
     else
       flash.now[:error] = '保存に失敗しました' 
       render :index
