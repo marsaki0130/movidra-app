@@ -1,18 +1,19 @@
 %p Sign up
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    =f.label :ユーザー名
-    %br/
-    = f.text_field :username, class: 'text'
-  .field
-    = f.label :email,class:'text'
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email",class:'text'
-  .field
-    = f.label :password,class:'text'
-    %br/
-    = f.password_field :password, autocomplete: "new-password",class:'text'
-  .actions
-    = f.submit "Sign up", class:'btn-primary'
-= render "devise/shared/links"
+.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      =f.label :ユーザー名
+      %br/
+      = f.text_field :username, class: 'text'
+    .field
+      = f.label :email,class:'text'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email",class:'text'
+    .field
+      = f.label :password,class:'text'
+      %br/
+      = f.password_field :password, autocomplete: "new-password",class:'text'
+    .actions
+      = f.submit "Sign up", class:'btn-primary'
+  = render "devise/shared/links"
