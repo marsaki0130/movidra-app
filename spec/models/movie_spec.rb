@@ -2,13 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
   context 'タイトル・ジャンル・娯楽が入力されている場合' do 
-   let!(:user) do
-    User.create!({
-      username: '毛スケ',
-      email: 'ksk@gmail.com',
-      password: 'password'
-    })
-   end
+   let!(:user) { create(:user)}
+    
 
    let!(:movie) do
     user.movie.build({
