@@ -1,0 +1,16 @@
+{
+    "name": "movidra",
+    "description": "This is movidra",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/marsaki0130/movidra-app",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
