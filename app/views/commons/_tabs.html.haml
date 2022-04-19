@@ -1,0 +1,10 @@
+.tabs
+  .tabs_item{class: "#{add_active_class(movies_path)}"}
+    = link_to movies_path do
+      映画・ドラマ一覧
+  .tabs_item{class: "#{add_active_class(timeline_path)}"}
+    = link_to timeline_path do
+      タイムライン
+  .tabs_item{class: "#{add_active_class(favorites_path)}"}
+    = link_to favorites_path do
+      お気に入り
