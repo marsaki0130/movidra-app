@@ -29,15 +29,7 @@
         %span= movie.like_count
         %p 件
 
-        :javascript
-          $('#star-rate#{movie.id}').raty({
-            size      : 36,
-            starOff   : '#{asset_path('star-off.png')}',
-            starOn    : '#{asset_path('star-on.png')}',
-            half      : false,
-            readOnly: true,
-            score: "#{movie.comments.average(:star).to_f.round(1)}",
-          });
+  
     
   
   = link_to new_movie_path do
