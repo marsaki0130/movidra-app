@@ -22,7 +22,7 @@
       - if !current_page?(root_path) 
         .search-form
           = form_with url:search_path, method: :get, local:true  do |f|
-            = text_field_tag :search, params[:search],:placeholder => "作品名を検索",:value => ""
+            = text_field_tag :search, params[:search],:placeholder => "作品名を入力",:value => ""
             = submit_tag "検索", :title => nil
 
       - if user_signed_in?

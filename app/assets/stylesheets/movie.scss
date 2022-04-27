@@ -102,7 +102,6 @@ $container-padding: 16px;
       scroll-snap-type: x;
       min-width: 100%;
       justify-content: space-evenly;
-      // cursor: pointer;
   
       &_image {
           scroll-snap-align: start;
@@ -127,12 +126,16 @@ $container-padding: 16px;
   cursor: pointer;
 }
 
+.movie_genre{
+  margin-top: 12px;
+  font-size: 16px;
+  position: relative;
+}
+
 .movie_frame{
   display: flex;
   font-size: 12px;
-  padding: 1em 1em;
-  margin: 2em 0;
-  border: solid 5px #808080;
+  // margin: 2em 0;
 }
 
 .movie_story{
