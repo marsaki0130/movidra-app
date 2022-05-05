@@ -78,16 +78,19 @@ $container-padding: 16px;
     }
 
     &_comment {
-      font-size: 12px;
+      color: $text-base-color;
+      font-size: 10px;
     }
 
 
     &_share {
+      color: #ffff;
       font-size: 12px;
     }
 
     &_secret {
-        font-size: 12px;
+      color: #ffff;
+      font-size: 12px;
     }
 
     &_heart {
@@ -97,6 +100,9 @@ $container-padding: 16px;
     &_content {
       position: fixed;
       bottom: 0;
+      left: 0;
+      // background-color: rgb(36, 35, 35);
+      // color: #ffff;
       display: flex;
       overflow: auto;
       scroll-snap-type: x;
@@ -108,8 +114,6 @@ $container-padding: 16px;
           display: block;
           max-height: 990px;
           max-width: 100%;
-          flex: none;
-          object-fit: cover;
           min-width: 100%;
           cursor: pointer;
       }
@@ -124,6 +128,7 @@ $container-padding: 16px;
   max-width: 50%;
   max-height: 50px;  
   cursor: pointer;
+  // background: #fff;
 }
 
 .movie_genre{
@@ -141,7 +146,9 @@ $container-padding: 16px;
 .movie_story{
   margin-top: 12px;
   font-size: 12px;
-  position: relative;
+  position: relative; 
+}
 
-  
+.like_icon{
+  // background: #fff;
 }

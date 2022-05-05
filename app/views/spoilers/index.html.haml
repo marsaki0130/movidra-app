@@ -6,6 +6,7 @@
   .spoiler
     -  @spoiler.each do |spoiler|
       .spoiler-content
+        %p= spoiler.user.username
         %p= spoiler.content
       %hr
 
