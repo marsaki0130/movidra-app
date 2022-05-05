@@ -26,7 +26,7 @@
             = submit_tag "検索", :title => nil
 
       - if user_signed_in?
-        = link_to 'ログアウト', destroy_user_session_path,data: {method: 'delete'}
+        = link_to 'ログアウト', destroy_user_session_path,data: {method: 'delete', confirm:'ログアウトしてもよろしいですか？'}
       - else
         = link_to 'ログイン', new_user_session_path
     
