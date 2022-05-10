@@ -1,4 +1,5 @@
 class SpoilersController < ApplicationController
+  before_action :authenticate_user!
   def index
     @movie = Movie.find(params[:movie_id])
     @spoiler = @movie.spoilers
