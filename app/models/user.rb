@@ -21,4 +21,11 @@ class User < ApplicationRecord
     likes.exists?(movie_id: movie.id)
   end
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = 'ゲスト'
+    end
+  end
+
 end

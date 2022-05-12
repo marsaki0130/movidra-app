@@ -14,6 +14,16 @@ class Devise::SessionsController < DeviseController
     respond_with(resource, serialize_options(resource))
   end
 
+  # ゲストアカウント用
+  def guest_sign_in
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.username = 'ゲスト'
+    end
+
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
   
 
   # POST /resource/sign_in
