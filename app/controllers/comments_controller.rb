@@ -26,6 +26,6 @@ class CommentsController < ApplicationController
 
   private
   def movie_params
-    params.require(:comment).permit(:feelings, :star).merge(user_id: current_user.id)
+    params.require(:comment).permit(:feelings, :rate).merge(user_id: current_user.id)
   end
 end

@@ -11,6 +11,7 @@ class Movie < ApplicationRecord
   validates :title, presence: true
   validates :entertainment, presence: true
   validates :genre, presence: true
+  
 
   def like_count
     likes.count

@@ -3,6 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+const jquery = require("jquery");
+
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
@@ -12,6 +14,7 @@ require('packs/raty')
 
 // import $ from 'jquery'
 // import axios from 'axios'
+// = require jquery.raty.js
 // // import { csrfToken } from 'rails-ujs'
 
 
