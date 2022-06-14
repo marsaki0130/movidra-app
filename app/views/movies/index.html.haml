@@ -19,6 +19,7 @@
           = image_tag eyecatch, class: 'movie_content_image'
       .movie_name
         %p= movie.title
+        #{movie.comments.average(:rate)}点
 
       .movie_comments
         %p 「レビュー」
@@ -29,10 +30,16 @@
         %span= movie.like_count
         %p 件
 
-  
-    
-  
+    :javascript
+      $('#star-rate-#{movie.id}').raty({
+        size: 36,
+        starOff: "#{asset_path('star-off.png')}",
+        starOn: "#{asset_path('star-on.png')}",
+        starHalf: "#{asset_path('star-half.png')}",
+        half: true,
+        readOnly: true,
+        score: "#{movie.comments.average(:rate).to_f.round(1)}",
+
   = link_to new_movie_path do
     .float_btn
       %i.fa.fa-plus
-

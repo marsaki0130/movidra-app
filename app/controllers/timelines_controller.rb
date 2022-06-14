@@ -1,5 +1,5 @@
 class TimelinesController < ApplicationController
   def show
-    @movies = Movie.find(Comment.group(:movie_id).order('count(movie_id) desc').pluck(:movie_id))
+    @movies = Movie.find(Like.group(:movie_id).order('count(movie_id) desc').pluck(:movie_id))
   end
 end
