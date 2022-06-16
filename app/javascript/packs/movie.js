@@ -4,6 +4,20 @@ import { csrfToken } from 'rails-ujs'
  
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
+axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+componentDidMount() {
+    this.getMovieList()
+  }
+
+  getMovieList(){
+    axios.get('https://api.themoviedb.org/3/movie/550?api_key=424e68afea1c77a991f3c55e8a7d01b0')
+    .then(response => {
+      console.log(response.data)
+    }).catch(err => {
+      console.log('err:', err);
+    });
+  }
 
 const handleHeartDisplay = (hasLiked) => {
     if (hasLiked){
