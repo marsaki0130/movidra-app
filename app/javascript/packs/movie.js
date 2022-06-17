@@ -4,7 +4,6 @@ import { csrfToken } from 'rails-ujs'
  
 
 axios.defaults.headers.common['X-CSRF-Token'] = csrfToken()
-
 const handleHeartDisplay = (hasLiked) => {
     if (hasLiked){
         $('.active-heart').removeClass('hidden')
