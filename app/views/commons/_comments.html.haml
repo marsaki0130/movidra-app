@@ -34,9 +34,7 @@
     .field
       #star.form-group.row
         = f.label :rate,'評価', class:'col-md-3 col-form-label'
-        = f.hidden_field :rate, id: :review_star
-      / 評価javascript
-
+        
       :javascript
         $('#star').raty({
           size     : 36,
