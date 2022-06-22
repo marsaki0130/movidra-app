@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   protect_from_forgery :except => [:destroy]
   
   def index
-    @movie = Movie.all
+    @movies = Movie.all
   end
 
   def show
