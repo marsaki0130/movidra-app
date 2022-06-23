@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_223418) do
     t.string "entertainment", null: false
     t.string "genre", null: false
     t.text "story"
-    t.float "rate", default: 0.0, null: false
+    t.float "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_movies_on_user_id"
