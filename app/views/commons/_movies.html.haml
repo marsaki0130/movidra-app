@@ -6,7 +6,7 @@
           = image_tag eyecatch, class: 'movie_content_image'
       .movie_name
         %p= movie.title
-        %div{:id => "star-rate#{movie.id}"}
+        %div{:id => "rate#{movie.id}"}
       .movie_comments
         %p 「レビュー」
         %span= movie.comment_count
@@ -16,11 +16,11 @@
         %span= movie.like_count
         %p 件
     :javascript
-        $('#star-rate#{movie.id}').raty({
+        $('#rate#{movie.id}').raty({
         size: 36,
         starOff: '#{asset_path('star-off.png')}',
         starOn: '#{asset_path('star-on.png')}',
-        harf: false,
+        harf: true,
         readOnly: true,
         score: #{movie.comments.average(:rate).to_f.round(1)}
       });
