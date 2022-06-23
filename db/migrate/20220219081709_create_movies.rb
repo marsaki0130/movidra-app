@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :entertainment, null:false
       t.string :genre, null:false
       t.text :story
+      t.float :rate, null: false, default: 0
       t.timestamps
     end
   end
